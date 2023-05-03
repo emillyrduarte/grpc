@@ -1,0 +1,21 @@
+
+syntax = "proto3";
+
+package unary;
+
+service Unary{
+  // RPC simples, manda um Message e recebe um MessageResponse
+ rpc GetServerResponse(Message) returns (MessageResponse) {}
+
+}
+
+message Message{
+ string cartao_sus = 1;
+ string especialidade = 2;
+}
+
+message MessageResponse{
+ string data = 1;
+ string hora = 2;
+ bool received = 3;
+}
